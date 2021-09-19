@@ -7,7 +7,7 @@ class DriveCommand(commands2.CommandBase):
     def __init__(self, drive: DriveSubsystem):
         super().__init__()
         self.drive = drive
-        self.addRequirements(drive)
+        self.addRequirements([self.drive])
     
     def execute(self):
         DriveSubsystem.arcadeInbuilt(RobotContainer.getY, RobotContainer.getZ)
