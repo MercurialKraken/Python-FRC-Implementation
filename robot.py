@@ -35,7 +35,7 @@ class Robot (wpilib.TimedRobot):
         if self.autonomousCommand:
             self.autonomousCommand.schedule()
 
-     def autonomousPeriodic(self):
+    def autonomousPeriodic(self):
         """This function is called periodically during autonomous."""
         pass
 
@@ -57,4 +57,4 @@ class Robot (wpilib.TimedRobot):
         pass
 
 if __name__ == "__main__":
-    wpilib.run(MyRobot)
+    wpilib.run(Robot)
