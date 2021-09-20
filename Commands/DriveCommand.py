@@ -2,6 +2,7 @@ import wpilib
 import commands2
 from robotcontainer import RobotContainer
 from Subsystems.DriveSubsystem import DriveSubsystem
+import constants
 
 class DriveCommand(commands2.CommandBase):
     def __init__(self, drive: DriveSubsystem):
@@ -10,5 +11,5 @@ class DriveCommand(commands2.CommandBase):
         self.addRequirements([self.drive])
     
     def execute(self):
-        DriveSubsystem.arcadeInbuilt(RobotContainer.getY, RobotContainer.getZ)
+        DriveSubsystem.arcadeInbuilt(RobotContainer.getY(RobotContainer.joy1, constants.deadband), RobotContainer.getZ(RobotContainer.joy1, constants.deadband))
         
